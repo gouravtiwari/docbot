@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'docbot'
+
+task = :docbot_scribble
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: docbot [options] [model_file]*"
+
+  opts.on('-d', '--delete', 
+  "Remove boilerplate documentation files") do
+    task = :docbot_erase
+  end
+
+  opts.on('-v', '--version', 
+  "Show the current version of this gem") do 
+    puts "docbot v#{Docbot.version}"; exit
+  end
+
+  opts.on('-r', '--rails',
+  "Only document files in the models, controllers, helpers folders") do
+    ENV['rails_app'] = "yes"
+  end
+
+end.parse!
+
+if Docbot.load_tasks
+  Rake::Task[task].invoke
+else
+  STDERR.puts "Can't find Rakefile. Are we in a Rails folder?"
+end

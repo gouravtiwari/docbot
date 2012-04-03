@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "docbot"
   gem.homepage = "http://github.com/heavysixer/docbot"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{TODO: create scaffold documentation for your code}
+  gem.description = %Q{TODO: Much of writing documentation for methods is repetative and boring, so let docbot get you 80% of the way there. Simply run the bot on your codebase and it will generate documentation for you.}
   gem.email = "mark@humansized.com"
   gem.authors = ["Mark Daggett"]
   # dependencies defined in Gemfile
@@ -30,14 +30,6 @@ Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
-end
-
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
 end
 
 task :default => :test

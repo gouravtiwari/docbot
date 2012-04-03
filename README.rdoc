@@ -1,6 +1,41 @@
-= docbot
+== docbot
 
-Description goes here.
+Much of writing technical documentation is cumbersome and repetitive. Docbot will create a scaffold documentation for all of your classes and modules in your Ruby project. You can then go through and fill out only the parts you care about. Finally, Docbot makes it 
+easy to remove any boilerplate documentation it created if you decide to not to use it.
+
+Docbot generates documentation using the TomDoc format (http://tomdoc.org/) other documentation styles are possible but not implemented.
+
+== INSTALL
+
+THIS GEM IS UNDER DEVELOPMENT AND DOES NOT WORK YET DO NOT UNSTALL (YET)
+
+From rubyforge:
+
+  sudo gem install docbot
+
+From github:
+
+  git clone git://github.com/heavysixer/docbot.git docbot
+  cd docbot
+  rake gem
+  sudo gem install pkg/docbot-*.gem
+
+== USAGE
+
+To document all your modules, classes etc.
+
+  cd /path/to/app
+  docbot
+
+== OPTIONS
+
+    Usage: docbot [options] [file]*
+        -d, --delete                     Remove boilerplate documentation from all model files
+        -v, --version                    Show the current version of this gem
+== AUTHOR:
+
+Mark Daggett (heavysixer)
+For Humansized Inc.
 
 == Contributing to docbot
  
